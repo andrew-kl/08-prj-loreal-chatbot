@@ -51,8 +51,8 @@ chatForm.addEventListener("submit", async (e) => {
     // Store assistant response in messages array
     messages.push({ role: "assistant", content: assistantMsg });
 
-    // Display assistant response
-    chatWindow.textContent = assistantMsg;
+    // Display user prompt & assistant response in chat window
+    chatWindow.innerHTML = `<b>You:</b> ${userMessage}<br><br>${assistantMsg}`;
   } catch (error) {
     console.error("Error connecting to the API:", error);
     chatWindow.textContent =
